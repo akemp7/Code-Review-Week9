@@ -13,10 +13,5 @@ namespace WordCount.Models
             userSentence = sentence; 
             userWord = word; 
         }
-
-        public void GetValidCount()
-        {
-
-        }
     }
 }
