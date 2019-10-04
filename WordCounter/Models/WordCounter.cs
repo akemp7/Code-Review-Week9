@@ -22,8 +22,14 @@ namespace WordCount.Models
             }
             else
             {
-                return "something";
+               return TokenCount();
             }
+        }
+
+        public string TokenCount()
+        {
+            string userInput = userSentence.ToLower();
+            return userInput;
         }
     }
 }

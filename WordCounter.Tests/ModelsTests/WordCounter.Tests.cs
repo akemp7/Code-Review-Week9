@@ -15,10 +15,12 @@ namespace WordCount.Test
             Assert.AreEqual(validCount, "Invalid input");
         }
 
-        // [TestMethod]
-        // public void RepeatCounter_AllTokens_Two()
-        // {
-        //     RepeatCounter newCount = new RepeatCounter("The cat was friends with another cat", "")
-        // }
+        [TestMethod]
+        public void RepeatCounter_LowerCaseSentence_lowercasesentence()
+        {
+            RepeatCounter newCount = new RepeatCounter("THE CAT SLEEPS.", "cat");
+            string lowerSentence = newCount.TokenCount();
+            Assert.AreEqual(lowerSentence, "the cat sleeps.");
+        }
     }
 }
