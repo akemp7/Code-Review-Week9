@@ -5,31 +5,43 @@ namespace WordCount.Models
 {
     public class RepeatCounter
     {
-        public string userSentence { get; set; }
-        public string userWord { get; set; }
+        public string UserSentence { get; set; }
+        public string UserWord { get; set; }
+
+        public string NewString { get; set; }
 
         public RepeatCounter(string sentence, string word)
         {
-            userSentence = sentence; 
-            userWord = word; 
+            UserSentence = sentence; 
+            UserWord = word; 
+            NewString = "";
         }
 
         public string GetValidInput()
         {
-            if(userSentence == "0" || userSentence == "1" || userSentence == "2" || userSentence == "3" || userSentence == "4" || userSentence == "5" || userSentence =="6" || userSentence =="7" || userSentence == "8" || userSentence == "9")
+            if(UserSentence == "0" || UserSentence == "1" || UserSentence == "2" || UserSentence == "3" || UserSentence == "4" || UserSentence == "5" || UserSentence =="6" || UserSentence =="7" || UserSentence == "8" || UserSentence == "9")
             {
-                return "Invalid input";
+                return "Please enter a sentence and word.";
             }
             else
             {
-               return TokenCount();
+                return "Something";
+             
             }
         }
 
         public string TokenCount()
         {
-            string userInput = userSentence.ToLower();
-            return userInput;
-        }
+            // string userInput = UserSentence.ToLower();
+            string [] wordArray = UserSentence.ToLower().Split(" ");
+            for (int i = 0; i<wordArray.Length; i++)
+            {
+                if(wordArray[i] == UserWord)
+                {
+                    NewString = string.Join(" ", wordArray);
+                }
+            }
+            return UserWord;
+        } 
     }
 }
