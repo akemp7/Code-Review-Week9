@@ -7,13 +7,13 @@ namespace WordCount.Test
 
     public class RepeatCounterTest
     {
-        // [TestMethod]
-        // public void RepeatCounter_ValidInput_None()
-        // {
-        //     RepeatCounter newCount = new RepeatCounter(8, 8);
-        //     string validCount = newCount.GetValidInput();
-        //     Assert.AreEqual(validCount, false);
-        // }
+        [TestMethod]
+        public void RepeatCounter_ValidInput_None()
+        {
+            RepeatCounter newCount = new RepeatCounter("8", "8");
+            string validCount = newCount.GetValidInput();
+            Assert.AreEqual(validCount, "Invalid input");
+        }
 
         // [TestMethod]
         // public void RepeatCounter_AllTokens_Two()
