@@ -31,5 +31,32 @@ namespace WordCount.Test
             newCount.TokenCount();
             Assert.AreEqual("cat cat", "cat cat");
         }
+
+        [TestMethod]
+        public void RepeatCounter_Plural_catcats()
+        {
+            RepeatCounter newCount = new RepeatCounter("Cats made a cat friend.", "cat");
+
+            newCount.TokenCount();
+            Assert.AreEqual("cats cat", "cats cat");
+        }
+
+        [TestMethod]
+        public void RepeatCounter_NoCathedral_cat()
+        {
+            RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend.", "cat");
+
+            newCount.TokenCount();
+            Assert.AreEqual("cat", "cat");
+        }
+
+        [TestMethod]
+        public void RepeatCounter_HowManyCats_ThreeCats()
+        {
+            RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend but not friends with other cats and one more cat.", "cat");
+
+            newCount.TokenCount();
+            Assert.AreEqual(tokenCount, 3);
+        }
     }
 }

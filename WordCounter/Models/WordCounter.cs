@@ -8,6 +8,8 @@ namespace WordCount.Models
         public string UserSentence { get; set; }
         public string UserWord { get; set; }
 
+        public int tokenCount { get; set; } = 0;
+
         public RepeatCounter(string sentence, string word)
         {
             UserSentence = sentence; 
@@ -30,7 +32,6 @@ namespace WordCount.Models
         public void TokenCount()
         {
             List<string> words = new List<string> {};
-            // string userInput = UserSentence.ToLower();
             string [] wordArray = UserSentence.ToLower().Split(" ");
             for(int i = 0; i<wordArray.Length; i++)
             {
