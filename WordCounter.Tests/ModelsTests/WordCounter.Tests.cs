@@ -29,7 +29,7 @@ namespace WordCount.Test
             RepeatCounter newCount = new RepeatCounter("The cat made a cat friend.", "cat");
             newCount.TokenCount();
             string output = newCount.NewString;
-            Assert.AreEqual("cat cat", output);
+            Assert.AreEqual("token token", output);
         }
     }
 }
