@@ -54,9 +54,8 @@ namespace WordCount.Test
         public void RepeatCounter_HowManyCats_ThreeCats()
         {
             RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend but not friends with other cats and one more cat.", "cat");
-
             newCount.TokenCount();
-            Assert.AreEqual(tokenCount, 3);
+            Assert.AreEqual(0, 3);
         }
     }
 }

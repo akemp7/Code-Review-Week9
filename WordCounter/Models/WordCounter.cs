@@ -8,12 +8,13 @@ namespace WordCount.Models
         public string UserSentence { get; set; }
         public string UserWord { get; set; }
 
-        public int tokenCount { get; set; } = 0;
+        public int tokenCount { get; set; }
 
         public RepeatCounter(string sentence, string word)
         {
             UserSentence = sentence; 
             UserWord = word; 
+            tokenCount = 0; 
         }
 
         public string GetValidInput()
@@ -38,9 +39,12 @@ namespace WordCount.Models
                 if(wordArray[i] == UserWord)
                 {
                    words.Add(wordArray[i]);
+                   tokenCount += 1;
+                    Console.WriteLine(tokenCount);
                 }
+               
             }
-        
+            
         } 
     }
 }
