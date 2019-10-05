@@ -27,16 +27,16 @@ namespace WordCount.Models
             }
         }
 
-        public string TokenCount()
+        public void TokenCount()
         {
-         
+            List<string> words = new List<string> {};
             // string userInput = UserSentence.ToLower();
             string [] wordArray = UserSentence.ToLower().Split(" ");
             for(int i = 0; i<wordArray.Length; i++)
             {
                 if(wordArray[i] == UserWord)
                 {
-                    
+                   words.Add(wordArray[i]);
                 }
             }
         

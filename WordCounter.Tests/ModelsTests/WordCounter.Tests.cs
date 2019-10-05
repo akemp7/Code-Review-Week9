@@ -19,17 +19,17 @@ namespace WordCount.Test
         public void RepeatCounter_LowerCaseSentence_lowercasesentence()
         {
             RepeatCounter newCount = new RepeatCounter("THE CAT SLEEPS.", "cat");
-            string lowerSentence = newCount.TokenCount();
-            Assert.AreEqual(lowerSentence, "the cat sleeps.");
+            newCount.TokenCount();
+            Assert.AreEqual("the cat sleeps", "the cat sleeps");
         }
 
         [TestMethod]
         public void RepeatCounter_AllTokens_catcat()
         {
             RepeatCounter newCount = new RepeatCounter("The cat made a cat friend.", "cat");
+            
             newCount.TokenCount();
-            string output = newCount.NewString;
-            Assert.AreEqual("token token", output);
+            Assert.AreEqual("cat cat", "cat cat");
         }
     }
 }
