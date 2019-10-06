@@ -52,7 +52,7 @@ namespace WordCount.Test
         {
             RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend but not friends with other cats and one more cat.", "cat");
             newCount.TokenCount();
-            int result = newCount.tokenCount;
+            int result = newCount.TokensCount;
             Assert.AreEqual(result, 3);
         }
     }
