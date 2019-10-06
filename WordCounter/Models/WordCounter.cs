@@ -38,16 +38,18 @@ namespace WordCount.Models
             string [] wordArray = UserSentence.ToLower().Split(" ");
             for(int i = 0; i<wordArray.Length; i++)
             {
-                if(wordArray[i].Contains(UserWord))
+                if(wordArray[i].Contains(UserWord) && i == UserWord.Length)
                 {
-                   words.Add(wordArray[i]);
+                      wordArray[i] = " ";
+                }
+                else if(wordArray[i].Contains(UserWord))
+                {
+                    words.Add(wordArray[i]);
                 }
                
             }
            foreach(string word in words)
              {
-               Console.WriteLine(word);
-               Console.WriteLine(words.Count);
                TokensCount = words.Count;
              }
         } 
