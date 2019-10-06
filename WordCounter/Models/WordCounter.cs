@@ -39,7 +39,7 @@ namespace WordCount.Models
                 if(wordArray[i] == UserWord)
                 {
                    words.Add(wordArray[i]);
-                   tokenCount += 1;
+                   tokenCount ++;
                     Console.WriteLine(tokenCount);
                 }
                
