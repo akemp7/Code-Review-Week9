@@ -37,11 +37,11 @@ namespace WordCount.Models
             string [] wordArray = UserSentence.ToLower().Split(" ");
             for(int i = 0; i<wordArray.Length; i++)
             {
-                if(i > UserWord.Length)
-                {
-                      wordArray[i] = " ";
-                }
-                else if(wordArray[i].Contains(UserWord))
+                // if(Convert.ToInt32(wordArray[i]) > UserWord.Length)
+                // {
+                //       wordArray[i] = "";
+                // }
+                if(wordArray[i].Contains(UserWord))
                 {
                     words.Add(wordArray[i]);
                 }
