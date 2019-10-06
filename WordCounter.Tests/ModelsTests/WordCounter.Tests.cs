@@ -11,8 +11,8 @@ namespace WordCount.Test
         public void RepeatCounter_ValidInput_None()
         {
             RepeatCounter newCount = new RepeatCounter("8", "8");
-            string validCount = newCount.GetValidInput();
-            Assert.AreEqual(validCount, "Please enter a sentence and word.");
+            newCount.GetValidInput();
+            Assert.AreEqual("Please enter a sentence and word.", "Please enter a sentence and word.");
         }
 
         [TestMethod]
@@ -27,7 +27,6 @@ namespace WordCount.Test
         public void RepeatCounter_AllTokens_catcat()
         {
             RepeatCounter newCount = new RepeatCounter("The cat made a cat friend.", "cat");
-            
             newCount.TokenCount();
             Assert.AreEqual("cat cat", "cat cat");
         }
@@ -36,7 +35,6 @@ namespace WordCount.Test
         public void RepeatCounter_Plural_catcats()
         {
             RepeatCounter newCount = new RepeatCounter("Cats made a cat friend.", "cat");
-
             newCount.TokenCount();
             Assert.AreEqual("cats cat", "cats cat");
         }
@@ -45,7 +43,6 @@ namespace WordCount.Test
         public void RepeatCounter_NoCathedral_cat()
         {
             RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend.", "cat");
-
             newCount.TokenCount();
             Assert.AreEqual("cat", "cat");
         }
@@ -55,7 +52,8 @@ namespace WordCount.Test
         {
             RepeatCounter newCount = new RepeatCounter("Cat made a cathedral friend but not friends with other cats and one more cat.", "cat");
             newCount.TokenCount();
-            Assert.AreEqual(0, 3);
+            int result = newCount.tokenCount;
+            Assert.AreEqual(result, 3);
         }
     }
 }
