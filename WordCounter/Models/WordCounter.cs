@@ -17,19 +17,14 @@ namespace WordCount.Models
             TokensCount = 0; 
         }
 
-        // public void GetValidInput()
-        // {
-        //     int userInput = int.Parse(UserSentence);
-        //     if(userInput > 0 || userInput <= 0)
-        //     {
-        //         Console.WriteLine("Please enter a sentence and word.");
-        //     }
-        //     else
-        //     {
-        //         TokenCount();
-    
-        //     }
-        // }
+        public void GetValidInput()
+        {
+            int userInput = int.Parse(UserSentence);
+            if(userInput > 0 || userInput <= 0)
+            {
+                Console.WriteLine("Please enter a sentence and word.");
+            }
+        }
 
         public void TokenCount()
         {
@@ -37,10 +32,10 @@ namespace WordCount.Models
             string [] wordArray = UserSentence.ToLower().Split(" ");
             for(int i = 0; i<wordArray.Length; i++)
             {
-                // if(Convert.ToInt32(wordArray[i]) > UserWord.Length)
-                // {
-                //       wordArray[i] = "";
-                // }
+                if(i == UserWord.Length)
+                {
+                      wordArray[i] = "";
+                }
                 if(wordArray[i].Contains(UserWord))
                 {
                     words.Add(wordArray[i]);
