@@ -11,11 +11,17 @@ namespace WordCount
             string userSentence = Console.ReadLine();
             Console.WriteLine("What is the word you are interested in counting?");
             string userWord = Console.ReadLine();
-            
-             RepeatCounter newCounter = new RepeatCounter(userSentence, userWord);
-            newCounter.TokenCount();
-            Console.WriteLine(newCounter.TokensCount);
+            RepeatCounter newCounter = new RepeatCounter(userSentence, userWord);
 
+            if (userSentence == "")
+            {
+             newCounter.CheckInput();
+            }
+            else
+            {
+            newCounter.TokenCount();
+            Console.WriteLine(newCounter.TokensCount);  
+            }
             }
         }
     }

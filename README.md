@@ -12,10 +12,10 @@ _This program will allow the user to enter a sentence and a word of interest. It
 
 | Behavior | Input | Output | Explanation|
 | -------- | :---------: | :---------: | :----------:|
-|The program will disregard numeric input for token count | "10" | "Please enter a sentence and word" | This is in order to control for unexpected user input|
+|The program will prompt user to enter a sentence if left blank | "" | "Please enter a sentence" | This is in order to control for blank input.|
 |The program will disregard upper case letters| "THE CAT SLEEPS." | "the cat sleeps."| This will ensure a more accurate token count|
 | The program will return instances of a specified word from the user.| "cat" "The cat was friends with another "cat" | "cat" "cat"| This is to ensure that the program is getting all instances of the specified word, and not getting a word like "cathedral"|
-| The program will also return all instances of cat even with different affixes| "The cats are friends with cat one and cat two"| "cats" "cat" "cat" | In order to find all of the instances of cat"|
+| The program will disregard instances of cat with different affixes or in words like "cathedral"| "The cats are friends with cat one and cat two"| "cat" "cat" | In order to control for token count of particular word.|
 | The program will perform a token count| "cat" "cat" "cat" | Token Count: 3 | Having generated all instances of the token, it should now be able to return a count|
 
 ## Setup/Installation Requirements

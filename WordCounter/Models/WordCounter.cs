@@ -43,13 +43,9 @@ namespace WordCount.Models
                 else if(wordArray[i].Contains(UserWord))
                 {
                     words.Add(wordArray[i]);
-                }
-               
+                    TokensCount = words.Count;
+                }    
             }
-           foreach(string word in words)
-             {
-               TokensCount = words.Count;
-             }
         } 
     }
 }
