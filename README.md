@@ -6,7 +6,7 @@
 
 ## Description
 
-_This program will allow the user to enter a sentence and a word of interest. It will then check how many times the word appears in the user sentence. It will then return to the user a word count._
+_This console app is an exercise in implementing tests in C# using MS TestAdapter and Framework. The program will allow the user to enter a sentence and a word of interest. It will then check how many times the word appears in the user sentence. It will then return to the user a word count._
 
 ## Specifications
 
@@ -18,8 +18,21 @@ _This program will allow the user to enter a sentence and a word of interest. It
 | The program will disregard instances of cat with different affixes or in words like "cathedral"| "The cats are friends with cat one and cat two"| "cat" "cat" | In order to control for token count of particular word.|
 | The program will perform a token count| "cat" "cat" "cat" | Token Count: 3 | Having generated all instances of the token, it should now be able to return a count|
 
+## Testing
+
+The specifications outlined above motivate the tests done for this app. An example can be seen below:
+```
+[TestMethod]
+        public void RepeatCounter_CheckInput_None()
+        {
+            RepeatCounter newCount = new RepeatCounter("", "cat");
+            bool inputCheck = newCount.CheckInput();
+            Assert.AreEqual(inputCheck, false);
+        }
+```
 ## Setup/Installation Requirements
 
+### For the console app:
 * _Clone this repository and navigate to the WordCount.Solution and then to "WordCount" project directory_
 * _Run the command "dotnet restore"_
 * _Run the command "dotnet run"_
